@@ -5,6 +5,7 @@ import Brands from "../components/home/Brands";
 import CTAStrip from "../components/common/CTAStrip";
 import SolutionsSplit from "../components/common/SolutionsSplit";
 import Calculator from "../components/common/Calculator";
+import ClimateSection from "../components/common/ClimateSection";
 
 export default function Inicio() {
   return (
@@ -19,7 +20,7 @@ export default function Inicio() {
       </section>
 
       <ProcessStrip />
-      {/* TODO: <ClimateSection /> — se agrega en el paso "página Acción climática" */}
+      <ClimateSection />
       <Brands />
       <CTAStrip />
     </>
