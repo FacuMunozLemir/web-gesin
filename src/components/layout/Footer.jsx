@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import logoNegativa from "../../assets/img/logo-negativa.png";
-import logoIsotipo from "../../assets/img/logo-isotipo.png";
+import logoNegativa from "../../assets/img/logo-gesin.png";
 
 export default function Footer() {
   return (

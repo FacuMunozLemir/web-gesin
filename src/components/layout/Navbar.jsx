@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logoNegativa from "../../assets/img/logo-negativa.png";
+import logoNegativa from "../../assets/img/logo-gesin.png";
 
 const NAV_LINKS = [
   { to: "/calculadora", label: "Calculadora" },
