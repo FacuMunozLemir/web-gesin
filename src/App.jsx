@@ -7,20 +7,24 @@ import Climatica from "./pages/Climatica";
 import Nosotros from "./pages/Nosotros";
 import Blog from "./pages/Blog";
 import Contacto from "./pages/Contacto";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/soluciones" element={<Soluciones />} />
-        <Route path="/calculadora" element={<Calculadora />} />
-        <Route path="/accion-climatica" element={<Climatica />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/recursos" element={<Blog />} />
-        <Route path="/contacto" element={<Contacto />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/soluciones" element={<Soluciones />} />
+          <Route path="/calculadora" element={<Calculadora />} />
+          <Route path="/accion-climatica" element={<Climatica />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/recursos" element={<Blog />} />
+          <Route path="/contacto" element={<Contacto />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { to: "/calculadora", label: "Calculadora" },
   { to: "/accion-climatica", label: "Acción climática" },
   { to: "/nosotros", label: "Nosotros" },
-  { to: "/recursos", label: "Recursos" },
+  { to: "/recursos", label: "Blog" },
   { to: "/contacto", label: "Contacto" },
 ];
 
@@ -128,7 +128,9 @@ export default function Navbar() {
           <div className="relative group">
             <NavLink
               to="/soluciones"
-              className={linkClass + " inline-flex items-center gap-1"}
+              className={({ isActive }) =>
+                linkClass({ isActive }) + " inline-flex items-center gap-1"
+              }
             >
               Soluciones
               <svg width="10" height="10" viewBox="0 0 10 10">
@@ -145,7 +147,7 @@ export default function Navbar() {
                 {SOLUTIONS.map((s) => (
                   <Link
                     key={s.id}
-                    to="/soluciones"
+                    to={`/soluciones?tab=${s.id}`}
                     className="flex items-start gap-2.5 p-2.5 rounded-lg hover:bg-bg-tint"
                   >
                     <span className="w-8 h-8 rounded-md bg-[#eef3f8] text-blue-900 grid place-items-center shrink-0">

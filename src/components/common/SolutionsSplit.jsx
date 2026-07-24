@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SOLUTIONS } from "../../data/solutions";
 import Eyebrow from "./Eyebrow";
 
-export default function SolutionsSplit() {
-  const [active, setActive] = useState("residencial");
+export default function SolutionsSplit({ initial = "residencial" }) {
+  const [active, setActive] = useState(initial);
+
+  useEffect(() => {
+    setActive(initial);
+  }, [initial]);
+
   const s = SOLUTIONS.find((x) => x.id === active);
 
   return (
-    <section className="py-16 sm:py-24 border-b border-gray-200">
+    <section
+      id="soluciones-split"
+      className="scroll-mt-20 py-16 sm:py-24 border-b border-gray-200"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>

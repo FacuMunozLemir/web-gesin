@@ -11,7 +11,7 @@ export default function Topbar() {
             ARG · Ingeniería eléctrica matriculada
           </span>
         </div>
-        <span>+54 9 11 0000-0000 · contacto@gesin.com.ar</span>
+        <span>contacto@gesin.com.ar</span>
       </div>
     </div>
   );

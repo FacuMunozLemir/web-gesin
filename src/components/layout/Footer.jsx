@@ -5,13 +5,6 @@ import logoIsotipo from "../../assets/img/logo-isotipo.png";
 export default function Footer() {
   return (
     <footer className="relative bg-blue-900 text-white pt-16 overflow-hidden">
-      <img
-        src={logoIsotipo}
-        alt=""
-        aria-hidden="true"
-        className="hidden lg:block absolute -right-16 -bottom-16 w-96 opacity-5 pointer-events-none select-none"
-      />
-
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           <div className="md:col-span-1">
@@ -30,18 +23,18 @@ export default function Footer() {
             </h5>
             <ul className="space-y-2 text-sm text-white/80">
               {[
-                "Residencial",
-                "Comercial",
-                "Industrial",
-                "Agroganadero",
-                "Off-grid",
+                { l: "Residencial", id: "residencial" },
+                { l: "Comercial", id: "comercial" },
+                { l: "Industrial", id: "industrial" },
+                { l: "Agroganadero", id: "agro" },
+                { l: "Off-grid", id: "offgrid" },
               ].map((s) => (
-                <li key={s}>
+                <li key={s.id}>
                   <Link
-                    to="/soluciones"
+                    to={`/soluciones?tab=${s.id}`}
                     className="hover:text-orange transition-colors"
                   >
-                    {s}
+                    {s.l}
                   </Link>
                 </li>
               ))}
@@ -111,7 +104,7 @@ export default function Footer() {
               </div>
               <div className="flex gap-2.5">
                 <span className="text-orange">✆</span>
-                <span>+54 9 11 0000-0000</span>
+                <span>+54 9 362 486-6554</span>
               </div>
               <div className="flex gap-2.5">
                 <span className="text-orange">✉</span>

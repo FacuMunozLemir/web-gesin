@@ -1,6 +1,8 @@
 import PageHero from "../components/common/PageHero";
 import SolutionsSplit from "../components/common/SolutionsSplit";
 import CTAStrip from "../components/common/CTAStrip";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const STATS = [
   {
@@ -24,6 +26,16 @@ const STATS = [
 ];
 
 export default function Soluciones() {
+  const [searchParams] = useSearchParams();
+  const tab = searchParams.get("tab");
+
+  useEffect(() => {
+    if (tab) {
+      document
+        .getElementById("soluciones-split")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [tab]);
   return (
     <>
       <PageHero
@@ -31,7 +43,7 @@ export default function Soluciones() {
         title="Fotovoltaica, a medida de cada demanda."
         lead="Cinco segmentos, un mismo estándar de ingeniería y gestión. Elegí el que corresponda a tu proyecto para ver alcance técnico, rangos de potencia, payback y casos reales."
       />
-      <SolutionsSplit />
+      <SolutionsSplit initial={tab || "residencial"} />
 
       <section className="py-16 sm:py-24 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
