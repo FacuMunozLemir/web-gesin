@@ -106,6 +106,10 @@ export default function Footer() {
                 <span>+54 9 362 486-6554</span>
               </div>
               <div className="flex gap-2.5">
+                <span className="text-orange">✆</span>
+                <span>+54 9 388 329-4962</span>
+              </div>
+              <div className="flex gap-2.5">
                 <span className="text-orange">✉</span>
                 <span>contacto@gesin.com.ar</span>
               </div>
